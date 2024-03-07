@@ -8,20 +8,59 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.center {
-  padding-inline: max(50% - 868px, 12px);
-}
-
 a {
   text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.center {
+  padding-inline: max(50% - 868px, 92px);
+}
+
+.note {
+  position: absolute;
+  width: 644px;
+  height: 104px;
+  left: 1036px;
+  right: 56px;
+  top: 56px;
+  bottom: 568px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 16px;
+  padding: 32px;
+  color: rgb(129, 129, 129);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  background-color: beige;
 }
 
 .contacts {
   margin-top: 272px;
   margin-bottom: 24px;
 }
+.contacts-form__title {
+  color: rgb(40, 40, 40);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+}
 .contacts-map {
   margin-top: 56px;
+}
+.contacts-map--laptop {
+  display: none;
+}
+.contacts-map--tablet {
+  display: none;
+}
+.contacts-map--mobile {
+  display: none;
 }
 
 .breadcrumbs {
@@ -57,8 +96,10 @@ a {
   line-height: 28px;
   padding-top: 32px;
   padding-bottom: 41px;
+  max-width: 730px;
 }
 .heading-description__req {
+  max-width: 1144px;
   margin-top: 32px;
   margin-bottom: 56px;
   color: rgb(129, 129, 129);
@@ -70,11 +111,13 @@ a {
 .office {
   margin-top: 124px;
   margin-bottom: 124px;
+}
+.office-container {
   position: relative;
 }
 .office-gallery {
   display: flex;
-  gap: 48px 40px;
+  gap: 40px;
   overflow-x: scroll;
   padding-bottom: 32px;
 }
@@ -99,7 +142,7 @@ a {
 }
 .team-description__right--office {
   position: absolute;
-  right: max(50% - 868px, 12px);
+  right: 0;
   bottom: -25px;
   background: white;
   width: 200px;
@@ -129,6 +172,9 @@ a {
   gap: 40px;
 }
 
+.worker, .worker * {
+  width: 404px;
+}
 .worker-name {
   color: rgb(40, 40, 40);
   font-size: 16px;
@@ -153,38 +199,59 @@ a {
 
 .requisites {
   display: flex;
-  gap: 148px;
+  flex-direction: column;
   margin-bottom: 124px;
 }
 .requisites-left {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 148px;
 }
-.requisites-right {
+.requisites-pdf {
   display: flex;
   box-sizing: border-box;
   gap: 24px;
   padding: 24px;
   width: 444px;
   background-color: #FAFAFA;
+  height: 104px;
 }
-.requisites-right__req {
+.requisites-pdf__mobile {
+  display: none;
+}
+.requisites-pdf__req {
   color: rgb(40, 40, 40);
   font-size: 20px;
   font-weight: 600;
   line-height: 28px;
 }
-.requisites-right__file {
+.requisites-pdf__file {
   color: rgb(129, 129, 129);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
 }
 
+.copy {
+  display: none;
+  position: absolute;
+  right: 32px;
+}
+
 .table {
   margin-bottom: 124px;
   border: 1px solid rgb(217, 217, 217);
   border-collapse: collapse;
+  width: 1144px;
+}
+@media (min-width: 769px) {
+  .table tr:hover {
+    cursor: url(images/cursor.png), auto;
+    background-color: #f5f5f5;
+  }
+  .table tr:hover .copy {
+    display: inline-block;
+  }
 }
 .table td {
   border: 1px solid #dddddd;
@@ -201,15 +268,178 @@ a {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-}
-.table-text__copy {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
 }
 
-.copy {
-  background-color: #f5f5f5;
+@media (max-width: 1440px) {
+  .center {
+    padding-inline: 72px;
+  }
+  .contacts-map {
+    display: none;
+  }
+  .contacts-map--laptop {
+    display: inline;
+    margin-top: 56px;
+  }
+  .office-gallery {
+    gap: 24px;
+  }
+  .heading-description {
+    max-width: 730px;
+  }
+  .heading-description__req {
+    max-width: 770px;
+  }
+  .worker, .worker * {
+    width: 416px;
+  }
+  .workers {
+    overflow: auto;
+    scrollbar-width: none;
+    gap: 24px;
+  }
+  .worker, .worker * {
+    width: 416px;
+  }
+  .requisites-pdf {
+    width: 416px;
+    align-items: center;
+  }
+  .requisites-left {
+    gap: 110px;
+  }
+  .table {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .center {
+    padding-inline: 36px;
+  }
+  .heading {
+    font-size: 48px;
+  }
+  .contacts-map {
+    display: none;
+    margin-bottom: 40px;
+  }
+  .contacts-map--laptop {
+    display: none;
+  }
+  .contacts-map--tablet {
+    display: inline;
+  }
+  .worker, .worker * {
+    width: 320px;
+  }
+  .workers {
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 100px;
+  }
+  .requisites-pdf {
+    display: none;
+  }
+  .requisites-pdf__mobile {
+    display: flex;
+    width: 100%;
+    max-width: unset;
+  }
+  .table {
+    margin-bottom: 40px;
+  }
+  .team-description__right {
+    display: none;
+  }
+}
+@media (max-width: 375px) {
+  .center {
+    padding-inline: 12px;
+  }
+  .breadcrumbs {
+    margin-bottom: 40px;
+  }
+  .breadcrumbs-link {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+  .heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .heading-description {
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 20px;
+    padding-bottom: 32px;
+  }
+  .heading-description__req {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 20px;
+    margin-bottom: 32px;
+  }
+  .office {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+  .team-description__right {
+    display: none;
+  }
+  .contacts {
+    margin-top: 138px;
+  }
+  .contacts-map {
+    display: none;
+    margin-top: 32px;
+  }
+  .contacts-map--laptop {
+    display: none;
+  }
+  .contacts-map--tablet {
+    display: none;
+  }
+  .contacts-map--mobile {
+    display: inline;
+  }
+  .workers {
+    margin-bottom: 92px;
+    flex-wrap: nowrap;
+  }
+  .table {
+    border: none;
+  }
+  .table-name {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  .table-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .table td {
+    width: 50%;
+    border: none;
+    border-bottom: 1px solid #dddddd;
+  }
+  .table td:first-child {
+    padding-inline: 0 10px;
+  }
+  .table td:last-child {
+    padding-inline: 10px 0;
+    word-break: break-word;
+  }
+  .requisites {
+    margin-bottom: 64px;
+  }
+  .requisites-pdf {
+    padding: 16px;
+    gap: 16px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
