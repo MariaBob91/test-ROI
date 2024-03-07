@@ -1,0 +1,100 @@
+@media (max-width: 375px) {
+    .center {
+        padding-inline: 12px;
+    }
+
+    .breadcrumbs {
+        margin-bottom: 40px;
+        &-link {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        }
+    }
+
+    .heading {
+        font-size: 32px;
+        line-height: 40px;
+        &-description {
+            font-size: 14px;
+            line-height: 20px;
+            padding-top: 20px;
+            padding-bottom: 32px;
+            &__req {
+                font-size: 14px;
+                line-height: 20px;
+                margin-top: 20px;
+                margin-bottom: 32px;
+            }
+        }
+    }
+
+    .office {
+        margin-top: 64px;
+        margin-bottom: 64px;
+    }
+
+    .team-description__right {
+        display: none;
+    }
+
+    .contacts {
+        margin-top: 138px;
+
+        &-map {
+            display: none;
+            margin-top: 32px;
+
+            &--laptop {
+                display: none;
+            }
+
+            &--tablet {
+                display: none;
+            }
+
+            &--mobile {
+                display: inline;
+            }
+        }
+    }
+
+    .workers {
+        margin-bottom: 92px;
+        flex-wrap: nowrap;
+    }
+
+    .table {
+        border: none;
+        &-name {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        }
+        &-text {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        }
+        & td {
+            width: 50%;
+            border: none;
+            border-bottom: 1px solid #dddddd;
+            &:first-child {
+                padding-inline: 0 10px;
+            }
+            &:last-child {
+                padding-inline: 10px 0;
+                word-break: break-word;
+            }
+        }
+    }
+
+    .requisites {
+        margin-bottom: 64px;
+        &-pdf {
+            padding: 16px;
+            gap: 16px;
+        }
+    }
+}
